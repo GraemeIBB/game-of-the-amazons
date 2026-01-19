@@ -1,0 +1,42 @@
+# Maven build artifacts
+target/
+
+# Compiled class files
+*.class
+
+# Package files
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Eclipse IDE
+.project
+.classpath
+.settings/
+.metadata/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# NetBeans
+nbproject/
+nbbuild/
+dist/
+nbdist/
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Log files
+*.log
+
+# Build artifacts that shouldn't be in source control
+META-INF/

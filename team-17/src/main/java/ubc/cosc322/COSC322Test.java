@@ -67,15 +67,10 @@ public class COSC322Test extends GamePlayer {
         System.out.println("The next step is to find a room and join it: "
                 + "the gameClient instance created in my constructor knows how!");
         List<Room> roomList = gameClient.getRoomList();
-        for (int i = 0; i < gameClient.getRoomList().size(); i++) {
-            System.out.println("- " + roomList.get(i));
+        for (int i = 0; i < roomList.size(); i++) {
+            System.out.println(roomList.get(i));
         }
-        Scanner scan = new Scanner(System.in);
-
-        boolean validRName = false;
-        while (!validRName) {
-            System.out.println("Enter a valid room name");
-        }
+        gameClient.joinRoom("Kootenay Lake");
 
     }
 
