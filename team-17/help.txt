@@ -1,0 +1,5 @@
+From team-17/:
+    to compile:
+        mvn clean compile
+    to run:
+        mvn exec:java -Dexec.mainClass="ubc.cosc322.COSC322Test" -Dexec.args="username password"

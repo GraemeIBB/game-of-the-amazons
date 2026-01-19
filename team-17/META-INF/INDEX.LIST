@@ -1,0 +1,15 @@
+JarIndex-Version: 1.0
+
+ygraph-ai-smartfox-client-2.1.jar
+ubc
+ubc/cosc322
+ygraph
+ygraph/ai
+ygraph/ai/smartfox
+ygraph/ai/smartfox/games
+ygraph/ai/smartfox/games/amazons
+ygraph/ai/smartfox/games/amazons/images
+META-INF/maven
+META-INF/maven/ubc-yong-gao
+META-INF/maven/ubc-yong-gao/ygraph-ai-smartfox-client
+
