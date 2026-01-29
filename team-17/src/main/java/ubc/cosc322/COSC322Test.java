@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import sfs2x.client.entities.Room;
 import ygraph.ai.smartfox.games.BaseGameGUI;
@@ -61,6 +63,36 @@ public class COSC322Test extends GamePlayer {
         // To make a GUI-based player, create an instance of BaseGameGUI
         // and implement the method getGameGUI() accordingly
         this.gamegui = new BaseGameGUI(this);
+
+        // Add mouse listener to handle board clicks
+        this.gamegui.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int pixelX = e.getX();
+                int pixelY = e.getY();
+
+                // Game of the Amazons is 10x10 board
+                int boardSize = 10;
+                int minx = 60;
+                int maxx = 560;
+                int miny = 95;
+                int maxy = 595;
+
+                int boardX = maxx - minx;
+                int boardY = maxy - miny;
+
+                int row = (boardY - (pixelY - miny)) / (boardY / boardSize);
+                int col = (pixelX - minx) / (boardX / boardSize);
+                // Board coordinates are typically 1-indexed in the game protocol
+                char[] horiz = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' };
+
+                int boardRow = row + 1;
+                char boardCol = horiz[col];
+                System.out.println("cords: x: " + pixelX + " y: " + pixelY);
+                System.out.println("Board position: Row=" + boardRow + ", Col=" + boardCol);
+                System.out.println("---");
+            }
+        });
     }
 
     @Override
@@ -68,6 +100,7 @@ public class COSC322Test extends GamePlayer {
         userName = gameClient.getUserName();
         if (gamegui != null) {
             gamegui.setRoomInformation(gameClient.getRoomList());
+
         }
 
     }
